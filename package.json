@@ -1,0 +1,27 @@
+{
+  "name": "intrinio-screener",
+  "version": "1.0.0",
+  "description": "An application meant to screen stocks using info from intrinio's API",
+  "main": "screen.js",
+  "scripts": {
+    "test": "node screen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brainfreezefl/Intrinio-Screener.git"
+  },
+  "keywords": [
+    "Node",
+    "javascript"
+  ],
+  "author": "Samuel Lewis",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Brainfreezefl/Intrinio-Screener/issues"
+  },
+  "homepage": "https://github.com/Brainfreezefl/Intrinio-Screener#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  }
+}
