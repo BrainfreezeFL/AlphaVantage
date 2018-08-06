@@ -38,7 +38,7 @@ function main() {
                     data += chunk;
                 });
  
-                // The whole response has been received. Print out the result.
+                // The whole response has been received.
                 resp.on('end', () => {
                     // Increase tempy to keep track of what ticker we are using.
                     tempy = tempy+1;
@@ -47,7 +47,7 @@ function main() {
                     var parsed = hist.historical_data(data);
                     
                     // Perform the screen on the data
-                    // screen.twenty(parsed);
+                    screen.threeThirty(parsed, array[tempy-1]);
                 });
                 
                 
