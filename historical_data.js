@@ -9,6 +9,8 @@ module.exports = {
     var array = [];
     var dateBool = false;
     var priceBool = false;
+    
+    // begin the parse by checking for a date
     for (var i =0; i<count; i++)
     {
         if(Number.isInteger(String(input).charAt(i)) && 
@@ -22,8 +24,7 @@ module.exports = {
             Number.isInteger(String(input).charAt(i+8)) &&
             Number.isInteger(String(input).charAt(i+9)))
         {
-            //Remove the word date and extra symbols
-            //i = i+7;
+            // If you find a date, remove the word date and extra symbols
             var date = "";
             
             // Read in the date and remove the values and extra symbols
@@ -36,6 +37,7 @@ module.exports = {
             i = i+10;
             dateBool = true;
         }
+        // If that value is not a date, then check to see if it is the stock price data and read it in.
         else if(String(input).charAt(i) == 'c' &&
                String(input).charAt(i+1) == 'l' &&
                String(input).charAt(i+2) == 'o' &&
@@ -52,7 +54,7 @@ module.exports = {
             
             priceBool = true
         }
-            // Now read in the actual stock price
+            // Once you have both a date and stock price you can fill in that section of the array and move on to the next date and price.
         else if(priceBool == true && dateBool == true){
             var stock = {Date: date, Price: parseInt(price)};
             array[array.length] = stock;
@@ -61,7 +63,7 @@ module.exports = {
         }    
         }
             
-    
+    // Return the usable data back to the program now
     return array;
 }
 }
